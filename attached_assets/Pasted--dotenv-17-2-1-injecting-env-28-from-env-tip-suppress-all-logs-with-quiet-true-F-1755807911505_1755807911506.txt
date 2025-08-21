@@ -1,0 +1,40 @@
+[dotenv@17.2.1] injecting env (28) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+✅ Firebase Admin SDK initialized successfully.
+Server is running on 0.0.0.0:5000
+Error syncing database: ConnectionError [SequelizeConnectionError]: The "options.checkServerIdentity" property must be of type function. Received type boolean (false)
+    at Client._connectionCallback (/home/runner/workspace/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:145:24)
+    at Client._handleErrorWhileConnecting (/home/runner/workspace/node_modules/pg/lib/client.js:336:19)
+    at Client._handleErrorEvent (/home/runner/workspace/node_modules/pg/lib/client.js:346:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.<anonymous> (/home/runner/workspace/node_modules/pg/lib/connection.js:101:21)
+    at Object.onceWrapper (node:events:633:26)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5) {
+  parent: TypeError [ERR_INVALID_ARG_TYPE]: The "options.checkServerIdentity" property must be of type function. Received type boolean (false)
+      at Object.connect (node:_tls_wrap:1761:3)
+      at getSecureStream (/home/runner/workspace/node_modules/pg/lib/stream.js:28:16)
+      at Socket.<anonymous> (/home/runner/workspace/node_modules/pg/lib/connection.js:99:23)
+      at Object.onceWrapper (node:events:633:26)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+    code: 'ERR_INVALID_ARG_TYPE'
+  },
+  original: TypeError [ERR_INVALID_ARG_TYPE]: The "options.checkServerIdentity" property must be of type function. Received type boolean (false)
+      at Object.connect (node:_tls_wrap:1761:3)
+      at getSecureStream (/home/runner/workspace/node_modules/pg/lib/stream.js:28:16)
+      at Socket.<anonymous> (/home/runner/workspace/node_modules/pg/lib/connection.js:99:23)
+      at Object.onceWrapper (node:events:633:26)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+    code: 'ERR_INVALID_ARG_TYPE'
+  }
+}
+Error: self-signed certificate in certificate chain
