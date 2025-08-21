@@ -1,0 +1,71 @@
+[dotenv@17.2.1] injecting env (28) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+ Server is running on 0.0.0.0:5000successfully.
+Error syncing database: ConnectionError [SequelizeConnectionError]: no pg_hba.conf entry for host "34.93.101.154", user "avnadmin", database "defaultdb", no encryption
+    at Client._connectionCallback (/home/runner/workspace/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:145:24)
+    at Client._handleErrorWhileConnecting (/home/runner/workspace/node_modules/pg/lib/client.js:336:19)
+    at Client._handleErrorMessage (/home/runner/workspace/node_modules/pg/lib/client.js:356:19)
+    at Connection.emit (node:events:518:28)
+    at /home/runner/workspace/node_modules/pg/lib/connection.js:116:12
+    at Parser.parse (/home/runner/workspace/node_modules/pg-protocol/dist/parser.js:36:17)
+    at Socket.<anonymous> (/home/runner/workspace/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3) {
+  parent: error: no pg_hba.conf entry for host "34.93.101.154", user "avnadmin", database "defaultdb", no encryption
+      at Parser.parseErrorMessage (/home/runner/workspace/node_modules/pg-protocol/dist/parser.js:285:98)
+      at Parser.handlePacket (/home/runner/workspace/node_modules/pg-protocol/dist/parser.js:122:29)
+      at Parser.parse (/home/runner/workspace/node_modules/pg-protocol/dist/parser.js:35:38)
+      at Socket.<anonymous> (/home/runner/workspace/node_modules/pg-protocol/dist/index.js:11:42)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+    length: 162,
+    severity: 'FATAL',
+    code: '28000',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'auth.c',
+    line: '541',
+    routine: 'ClientAuthentication'
+  },
+  original: error: no pg_hba.conf entry for host "34.93.101.154", user "avnadmin", database "defaultdb", no encryption
+      at Parser.parseErrorMessage (/home/runner/workspace/node_modules/pg-protocol/dist/parser.js:285:98)
+      at Parser.handlePacket (/home/runner/workspace/node_modules/pg-protocol/dist/parser.js:122:29)
+      at Parser.parse (/home/runner/workspace/node_modules/pg-protocol/dist/parser.js:35:38)
+      at Socket.<anonymous> (/home/runner/workspace/node_modules/pg-protocol/dist/index.js:11:42)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+    length: 162,
+    severity: 'FATAL',
+    code: '28000',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'auth.c',
+    line: '541',
+    routine: 'ClientAuthentication'
+  }
+}
+Error: self-signed certificate in certificate chain
