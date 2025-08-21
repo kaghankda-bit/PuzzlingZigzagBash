@@ -12,10 +12,12 @@ const sequelize = new Sequelize(
         protocol: "postgres",
         logging: process.env.NODE_ENV === "development" ? console.log : false,
         dialectOptions: {
-            ssl: {
+            ssl: process.env.DISABLE_SSL === 'true' ? false : (process.env.NODE_ENV === 'production' ? {
                 require: true,
                 rejectUnauthorized: false,
-            },
+                ca: false,
+                checkServerIdentity: false
+            } : false),
         },
         pool: {
             max: 10,
