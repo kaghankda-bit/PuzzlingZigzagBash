@@ -1,0 +1,289 @@
+Members Mobile Application
+ Authen ca on
+ 1 Sign in A User Sign in to my account. Using Google, Apple, and Email iOS, Android Fully Included Standard login with Google, Apple, and Email as discussed is included in MVP.
+ 2 Sign up A User Create an account 
+ID will start from country code
+ Link Verification Link Verification iOS, Android
+ Fully Included User registra on with country code input and link verifica on included.
+ 3 Ac va on code A User Create an  
+account using aci va on code
+ Activation code will be created by the business 
+owner and his employee and will be provided to 
+his employees. Users will not be able to use the 
+application without an activation code.
+ iOS, Android
+ Fully Included Ac va on via business owner provided code for employee onboarding included.
+ 4 Profile update A User update my profile details. iOS, Android Par ally Included Basic profile view and update (name, phone) included. Changing login email, 2FA, and account dele on not included.
+ 5 Log out A User Log out of my account. iOS, Android Fully Included Standard logout func onality included in MVP.
+ 6 Forgot password A User Will be able to reset his password After email link verification iOS, Android Fully Included Password reset via email link verifica on included.
+ Permissions View and redeem benefits (if ac ve 
+membership) 
+Browse offers by loca on and category 
+Update profile and language 
+Provide feedback (like/dislike offers) 
+View their consents and documents 
+Cannot access any administra ve 
+module
+ We need to force him to give us permission for 
+location services, otherwise app will not work.
+ Fully Included Loca on permission enforcement included; user must grant access for offers and redemp on to work.
+ 7 Home
+ 8 Scan QR code A user User will scan the QR code of a 
+merchant and view that merchant 
+detail page
+ iOS, Android
+ Fully Included Member and partner QR code scanning func onality included as discussed.
+ 9 Become a partner A user Start partner onboarding process in the 
+Partner App side
+ iOS, Android Fully Included Basic partner onboarding flow with necessary fields included.
+ 10 Merchants A user View all the merchants in specific 
+distance selected by member
+ iOS, Android Fully Included Merchant lis ng by distance for users included as discussed.
+ 11 Invite friends A user Show your referral code, Share my 
+referral code (we will open the share 
+intent and user will be able to share the 
+code via any messaging app). 
+Invited friends: Show the friends who 
+have joined this system. But, we cannot 
+show the users which I invited.
+ Usres can share the dynamic link. If application 
+installed then it will open the application 
+otherwise it will open the website
+ iOS, Android
+ Par ally Included Basic referral input and code sharing included. Dynamic linking, tracking rewards, and ambassador flows not included.
+ 12 Savings A user User will be able to see all their savings 
+categorised.
+ iOS, Android Not Included
+ 13 Deals A user View all deals in a specific loca on 
+selected by member
+ iOS, Android Fully Included Viewing deals in selected loca ons with basic filters included.
+ 14 Sponsored banners A user iOS, Android Not Included
+ 15 Popular merchants A user iOS, Android Fully Included Filter to view popular merchants included.
+ 16 Popular deals A user iOS, Android Fully Included Filter to view popular deals included.
+ 17 Show profile A user iOS, Android Fully Included Viewing user profile details included.
+ 18 Change Loca on A user User can save a new location with labels like 
+home, office, work etc, view saved locations 
+and search from there. And if user closes the 
+application then it will open again to the 
+previous location.
+ iOS, Android
+ Fully Included Changing loca on with label saving included as discussed.
+ 19 Save a new loca on Distance, edit loca on name, lat, lng, In our opinion distance is what in which we will 
+show all the deals, merchants
+ iOS, Android Fully Included Saving new loca ons with name, coordinates, and labels included.
+ 20 delete a loca on iOS, Android Fully Included Dele ng saved loca ons func onality included.
+ 21
+ 22
+ 23
+ 24
+ 25 Merchants
+ 26 Categories A User User can view merchants of specific 
+selected category
+ iOS, Android Fully Included Viewing merchants by selected categories included.
+ 27 Search A User Search through tags, name, or 
+descrip on
+ iOS, Android Fully Included Searching merchants by tags, name, or descrip on included.
+ 28 Mark as favourite A User iOS, Android Par ally Included UI for marking favourites included. Backend tracking and retrieval excluded from MVP.
+ 29 Merchant Detail page iOS, Android Fully Included Merchant detail page with relevant informa on included.
+ 30 Info Show merchant informa on iOS, Android Fully Included Viewing merchant informa on included.
+ 31 Deals Show all deals of merchant iOS, Android Fully Included Viewing deals of merchants included.
+ 32 Deal Info Page Deal informa on (terms, ra ng, 
+distance, validity, redemp on), More 
+deals (all other deals of this merchant 
+but screen is missing), Loca on (UI is 
+missing)
+ iOS, Android
+ Fully Included Deal informa on page with terms, ra ng, distance, validity, redemp on included as discussed.
+ 33 Loca ons Show all merchant loca ons with an 
+op on to navigate to that loca on and 
+also show the distance from the user's 
+selected loca on
+ We will open direct map on navigation button iOS, Android
+ Fully Included Viewing merchant loca ons with naviga on op on included.
+ 34
+ 35
+ 36
+ 37 Deals
+ 38 Show all deals Filter by categories, search deals iOS, Android Fully Included Viewing all deals func onality included.
+ 39 Deal Informa on page iOS, Android Fully Included Deal informa on viewing included.
+ 40
+ 41 Deal Redemp on
+ 42 View QR code Show deal code (we will generate QR 
+based on this), Business owner will scan 
+this QR code and accept or reject
+ iOS, Android
+ Fully Included Viewing generated QR code for deal redemp on included.
+ 43 Deal Redeemed View history or go to home iOS, Android Fully Included Deal redemp on history viewing included.
+ 44 Deal ra ng Like or dislike iOS, Android Fully Included Like/dislike ra ng func onality included.
+ 45 How much you saved Show default value and give edit op on 
+to user to edit the saved value.
+ iOS, Android Par ally Included Showing default saved value included. Edit op on not included in MVP.
+ 46 Redemp on through 
+user profile QR code
+ Member can show QR code to 
+merchant and merchant will scan the 
+QR code and ask him which deal user 
+want to redeem, and process it.
+ iOS, Android
+ Fully Included Redemp on flow via member QR code scanning included.
+ 47 Subscrip ons (To be 
+discussed)
+ 48 Subscrip ons Standard / Vip (and future roles) will be 
+reserved for App Users (according to 
+deal availability).  
+Every employee will be either standard 
+or VIP and it will be decided by the 
+company owner.
+ Standard / Vip (and future roles) will be 
+reserved for App Users (according to deal 
+availability).  
+Company owner will select whether the 
+company owner is going to pay, or employee 
+will pay, or both (let's say the company has 10 
+employees, then 5 will pay by themselves and 5 
+will be paid by the company, and the company 
+will select which employees are going to pay).
+ we discussed already about in-app 
+subscriptions as this system is not digital 
+benefits, people will use it in real life. So 
+explanation in this area from your guys is 
+not acceptable. We should be able to go 
+through Stripe not In-app purchases
+ iOS, Android
+ Par ally Included Standard/VIP membership assignment and Stripe payment integra on included. Future roles or advanced subscrip on analy cs not included.
+ Subscrip on Se ngs
+ 49 Expiry Member will not be able to redeem any 
+deal if subscrip on is expired or they 
+don't have the subscrip ons.  
+QR code scanning will also not work, 
+Also, he will not be able to view the 
+member card. User can: - contact HR - Or pay
+ iOS, Android
+ Fully Included Handling of subscrip on expiry with restric ons included.
+ Leave In case a user wants to leave, the 
+company owner will remove him from 
+from employees and will not pay for his 
+subscrip on.
+ Fully Included Member removal by company owner func onality included.
+ 50 Profile
+ 51 My Profile Show user profile 
+Show my card with user id, status, QR 
+code and op on to scan a QR code 
+iOS, Android
+ Fully Included User profile viewing with card ID, status, QR code included.
+ 52 Edit profile Edit user profile - Name, Phone 
+number, gender, birthday
+ We cannot edit the email because email is 
+unique value in the database.
+ iOS, Android Par ally Included Edi ng name, phone, gender, birthday included. Changing email excluded as it is unique in database.
+ 53 Se ng no fica ons Configure no fica ons on and off To be discussed iOS, Android Par ally Included Basic no fica on toggle included. Advanced scheduling or custom no fica on se ngs not included.
+ 54 No fica ons General 
+Promo ons
+ To be discussed iOS, Android
+ Fully Included Manual push no fica ons via Firebase included. Automated promo onal flows not included.
+ 55 Account & security Remember me 
+Face ID 
+Change password 
+Deac vate account 
+Deletec account
+ Will we delete the account after some time of 
+deactivation?
+ iOS, Android
+ Par ally Included Change password included. Remember me, Face ID, deac vate, delete account flows not included.
+ 56 Help and support iOS, Android Fully Included Help and support access included.
+ 57 Log out iOS, Android Fully Included Standard logout func onality included.
+ 58 Switch to partner iOS, Android Fully Included Switching to partner mode func onality included as discussed.
+ 59 App Languages Localiza on  
+Croa an 
+English
+ iOS, Android
+ Fully Included Localiza on for Croa an and English included.
+ 60 Member Ac vity Show all redemp ons 
+User will also be able to search from 
+merchant name or deal tle
+ iOS, Android
+ Fully Included Redemp on history and merchant/deal search func onality included.
+ 61
+ 62 Localiza on
+ 63 Mul lingual English & Croa an (main language) Croatian is default language. 
+Entrance: We can check the phone's language 
+and select that automatically. 
+Settings: User can change the language from 
+settings
+ iOS, Android
+ Fully Included English and Croa an mul lingual support included as discussed.
+ 64
+ 65 Partners(merchant or business owner) Application
+ 66 Profile
+ 67 Onboarding A Partner Fully Included Partner onboarding flow with company informa on, OIB autofill, and role selec on (offer deals, provide benefits, or both) included as discussed.
+ 68 Onboarding Form A Partner Onboarding form will take company 
+informa on from the user 
+Accessible only via a registered 
+Business Account (company or partner)
+ If user enters OIB then we will search from the 
+API otherwise we will give option to add fields 
+manually. 
+How would you like to use the Privilege: - As a user (Will offer deals) - As user of benifits (Will provide benifits to their 
+employees to redeem deals) - Both (offer deals, and provide benifits)
+ Fully Included Form with OIB API integra on, manual entry fallback, and business role selec on included.
+ 69 Onboarding Form - 
+SignIn
+ A Partner If user is already signed in then we will 
+submit this detail for the verifica on. Fully Included If user is already signed in, pre-fill verifica on data flow included.
+ 70 Onboarding Form - 
+SignUp
+ A Partner If not Signed In, we will ask him email, 
+password etc to create his account and 
+submit partnership request a er 
+onboarding form
+ Fully Included New partner signup flow with email, password, and onboarding form submission included.
+ 71 Pending Verifica on A Partner A er submission of onboarding form, 
+account verifica on from admin will be 
+pending and will be approved by admin, 
+un l then Pending Verifica on will 
+show
+ Fully Included Pending verifica on status view post-submission included.
+ Revisions A Partner A partner can see the reason for 
+rejec on and submit it again for 
+revision. 
+Also, the Admin will reject a specific 
+document, and the partner will be able 
+to update just that specific op on.
+ Fully Included Rejec on reason display and re-submission flow included. Admin can reject specific documents and partner can update only those as discussed.
+ 73 Home Page
+ 74 Your Ac ve Deals A Partner View all his ac ve deals Fully Included Viewing all ac ve deals for partner included.
+ 75 Add new Deal A Partner Add new deals 
+ID will start from country code
+ Image (photo cropping), category (fixed 
+categories), name, description, outlet selection, 
+keywords, who is this deal for (all members, 
+premium members), I agree checkbox, publish, 
+deal detial preview, Thank you page.  
+Discount type - standard -- Regular price, Campaign price, Campaign 
+duration (date range) - Percentage -- Discount percentage, discount on what 
+Fully Included Adding deals with photo crop, category, outlet selec on, keywords, eligibility (members/VIP), discount type, and preview flows included.
+ Deal verifica on Partner will submit the deal for Admin 
+verifica on and Admin will verify it. 
+They can also reject it. 
+Fully Included Deal submission for admin verifica on with approve/reject flows included.
+ Deal Edit Partner can edit the deal and it will 
+again goes to the Admin verifica on. Fully Included Edi ng exis ng deal and resubmission for admin verifica on included.
+ 76 Share Deals A Partner Show a QR code, if scaned from user 
+app side will show all deals Fully Included Sharing deal QR code to show all deals to members included.
+ 77 Scan Code A Partner This will be used to scan User's Profile 
+QR to redeem offers, on scanning 
+partner will be the deals that user can 
+redeem and process the redeemon
+ Fully Included Scanning user profile QR code to validate and redeem deals included.
+ 78 Business Timings A Partner Will be able to view his business status 
+and change/open/close mings Fully Included View and edit business mings and status included.
+ 79 Deals
+ 80 View all deals A Partner Can view all the deals, ac ve/inac ve, 
+expired Fully Included Viewing all deals with ac ve/inac ve/expired filters included.
+ 81 View deal detail A Partner Can view the details of a deal with 
+op on to pause and resume the deal Fully Included Viewing deal details with pause/resume op on included.
+ 79 Partner roles
+ 80 View all deals A Partner Can view all the deals, ac ve/inac ve, 
+expired Duplicate Entry
+ 81 View deal detail A Partner Can view the details of a deal with 
+op on to pause and resume the deal

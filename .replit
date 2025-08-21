@@ -1,4 +1,4 @@
-entrypoint = "index.js"
+entrypoint = "src/index.js"
 modules = ["nodejs-22"]
 hidden = [".config", "package-lock.json"]
 
@@ -9,6 +9,22 @@ requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
 channel = "stable-24_11"
 
 [deployment]
-run = ["node", "index.js"]
+run = ["node", "src/index.js"]
 deploymentTarget = "autoscale"
 ignorePorts = false
+
+[workflows]
+runButton = "Start Backend"
+
+[[workflows.workflow]]
+name = "Start Backend"
+author = 46729317
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node src/index.js"
+
+[[ports]]
+localPort = 5000
+externalPort = 80

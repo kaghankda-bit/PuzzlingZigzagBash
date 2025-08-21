@@ -1,15 +1,41 @@
 {
-  "name": "nodejs",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "seed": "node seeder.js",
+    "destroy": "node seeder.js -d",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
-    "@types/node": "^22.13.11"
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "firebase-admin": "^13.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.2",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.5",
+    "passport": "^0.7.0",
+    "passport-apple": "^2.0.2",
+    "passport-google-oauth20": "^2.0.0",
+    "pg": "^8.16.3",
+    "qrcode": "^1.5.4",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.3",
+    "shortid": "^2.2.17",
+    "stripe": "^14.5.0"
   }
 }

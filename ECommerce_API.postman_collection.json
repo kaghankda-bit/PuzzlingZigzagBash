@@ -1,0 +1,1144 @@
+
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+		"name": "Complete Mobile App Backend API",
+		"description": "Complete API collection for Croatian membership mobile app with authentication, deals, merchants, and payments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "🔐 Authentication APIs",
+			"item": [
+				{
+					"name": "Register User with OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "hr"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Marko Petrović\",\n    \"email\": \"marko@example.com\",\n    \"password\": \"123456\",\n    \"phone\": \"+385123456789\",\n    \"countryCode\": \"+385\",\n    \"gender\": \"male\",\n    \"birthday\": \"1990-05-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/register",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "register"]
+						}
+					}
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"marko@example.com\",\n    \"otp\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/verify-otp",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "verify-otp"]
+						}
+					}
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"marko@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/resend-otp",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "resend-otp"]
+						}
+					}
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"marko@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/login",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "login"]
+						}
+					}
+				},
+				{
+					"name": "Google OAuth Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/google",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "google"]
+						}
+					}
+				},
+				{
+					"name": "Apple OAuth Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/apple",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "apple"]
+						}
+					}
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"marko@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/forgot-password",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "forgot-password"]
+						}
+					}
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"marko@example.com\",\n    \"otp\": \"123456\",\n    \"newPassword\": \"newpassword123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/reset-password",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "reset-password"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "👤 User Profile APIs",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/profile",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "profile"]
+						}
+					}
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Marko Petrović Updated\",\n    \"phone\": \"+385987654321\",\n    \"gender\": \"male\",\n    \"birthday\": \"1990-05-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/profile",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "profile"]
+						}
+					}
+				},
+				{
+					"name": "Get Membership Card with QR",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/my-card",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "my-card"]
+						}
+					}
+				},
+				{
+					"name": "View Total Savings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/savings",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "savings"]
+						}
+					}
+				},
+				{
+					"name": "View Activity History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/activity",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "activity"]
+						}
+					}
+				},
+				{
+					"name": "Get Referral Code",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/referral-code",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "referral-code"]
+						}
+					}
+				},
+				{
+					"name": "View Invited Friends",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/invited-friends",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "invited-friends"]
+						}
+					}
+				},
+				{
+					"name": "Deactivate Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/deactivate",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "deactivate"]
+						}
+					}
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/profile",
+							"host": ["{{base_url}}"],
+							"path": ["api", "users", "profile"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🏪 Merchant APIs",
+			"item": [
+				{
+					"name": "Get All Merchants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/merchants?latitude=45.8150&longitude=15.9819&radius=10&category=Restaurant",
+							"host": ["{{base_url}}"],
+							"path": ["api", "merchants"],
+							"query": [
+								{"key": "latitude", "value": "45.8150"},
+								{"key": "longitude", "value": "15.9819"},
+								{"key": "radius", "value": "10"},
+								{"key": "category", "value": "Restaurant"}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Merchant Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/merchants/MERCHANT_ID",
+							"host": ["{{base_url}}"],
+							"path": ["api", "merchants", "MERCHANT_ID"]
+						}
+					}
+				},
+				{
+					"name": "Get Merchant Deals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/merchants/MERCHANT_ID/deals",
+							"host": ["{{base_url}}"],
+							"path": ["api", "merchants", "MERCHANT_ID", "deals"]
+						}
+					}
+				},
+				{
+					"name": "Add Merchant to Favorites",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/merchants/MERCHANT_ID/favorite",
+							"host": ["{{base_url}}"],
+							"path": ["api", "merchants", "MERCHANT_ID", "favorite"]
+						}
+					}
+				},
+				{
+					"name": "Remove from Favorites",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/merchants/MERCHANT_ID/favorite",
+							"host": ["{{base_url}}"],
+							"path": ["api", "merchants", "MERCHANT_ID", "favorite"]
+						}
+					}
+				},
+				{
+					"name": "Scan Merchant QR Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"qrCode\": \"MERCHANT_CODE_12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/merchants/scan",
+							"host": ["{{base_url}}"],
+							"path": ["api", "merchants", "scan"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🎯 Deal APIs",
+			"item": [
+				{
+					"name": "Get All Deals with Filters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/deals?category=Restaurant&minDiscount=10&maxDiscount=50&latitude=45.8150&longitude=15.9819&radius=5",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals"],
+							"query": [
+								{"key": "category", "value": "Restaurant"},
+								{"key": "minDiscount", "value": "10"},
+								{"key": "maxDiscount", "value": "50"},
+								{"key": "latitude", "value": "45.8150"},
+								{"key": "longitude", "value": "15.9819"},
+								{"key": "radius", "value": "5"}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Deal Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/deals/DEAL_ID",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "DEAL_ID"]
+						}
+					}
+				},
+				{
+					"name": "Redeem Deal with QR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"qrCode\": \"DEAL_ID-USER_MEMBERSHIP_ID\",\n    \"originalAmount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/deals/DEAL_ID/redeem",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "DEAL_ID", "redeem"]
+						}
+					}
+				},
+				{
+					"name": "Rate Deal (Like/Dislike)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": \"like\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/deals/DEAL_ID/rate",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "DEAL_ID", "rate"]
+						}
+					}
+				},
+				{
+					"name": "Add Deal to Favorites",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/deals/DEAL_ID/favorite",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "DEAL_ID", "favorite"]
+						}
+					}
+				},
+				{
+					"name": "Remove Deal from Favorites",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/deals/DEAL_ID/favorite",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "DEAL_ID", "favorite"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🤝 Partner APIs",
+			"item": [
+				{
+					"name": "Register Partner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{"key": "usageType", "type": "text", "value": "provider"},
+								{"key": "companyLegalName", "type": "text", "value": "Restoran Zagreb d.o.o."},
+								{"key": "representativeName", "type": "text", "value": "Marko"},
+								{"key": "representativeLastName", "type": "text", "value": "Petrović"},
+								{"key": "email", "type": "text", "value": "partner@restoran.hr"},
+								{"key": "phoneNumber", "type": "text", "value": "+385-91-123-4567"},
+								{"key": "businessLicense", "type": "file", "src": []},
+								{"key": "ownerIdFront", "type": "file", "src": []},
+								{"key": "ownerIdBack", "type": "file", "src": []}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/partners/register",
+							"host": ["{{base_url}}"],
+							"path": ["api", "partners", "register"]
+						}
+					}
+				},
+				{
+					"name": "Get Partner Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/partners/dashboard",
+							"host": ["{{base_url}}"],
+							"path": ["api", "partners", "dashboard"]
+						}
+					}
+				},
+				{
+					"name": "Add Team Member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ana Marić\",\n    \"email\": \"ana@restoran.hr\",\n    \"role\": \"Manager\",\n    \"permissions\": [\"view_deals\", \"edit_deals\"],\n    \"membershipLevel\": \"Bronze\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/partners/team-members",
+							"host": ["{{base_url}}"],
+							"path": ["api", "partners", "team-members"]
+						}
+					}
+				},
+				{
+					"name": "Get Team Members",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/partners/team-members",
+							"host": ["{{base_url}}"],
+							"path": ["api", "partners", "team-members"]
+						}
+					}
+				},
+				{
+					"name": "Create New Deal (Partner)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{"key": "title", "type": "text", "value": "50% popusta na glavna jela"},
+								{"key": "description", "type": "text", "value": "Nevjerojatan popust na sva glavna jela u našem restoranu"},
+								{"key": "dealCategory", "type": "text", "value": "Restaurant"},
+								{"key": "typeOfDiscount", "type": "text", "value": "Percentage"},
+								{"key": "discountValue", "type": "text", "value": "50"},
+								{"key": "validFrom", "type": "text", "value": "2024-01-01"},
+								{"key": "validUntil", "type": "text", "value": "2024-12-31"},
+								{"key": "image", "type": "file", "src": []}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/deals",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals"]
+						}
+					}
+				},
+				{
+					"name": "Update Deal (Partner)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Deal Title\",\n    \"description\": \"Updated description\",\n    \"discountValue\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/deals/DEAL_ID",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "DEAL_ID"]
+						}
+					}
+				},
+				{
+					"name": "Get Partner's Deals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/deals/partner",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "partner"]
+						}
+					}
+				},
+				{
+					"name": "Pause/Resume Deal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"paused\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/deals/DEAL_ID/status",
+							"host": ["{{base_url}}"],
+							"path": ["api", "deals", "DEAL_ID", "status"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "💳 Subscription & Payment APIs",
+			"item": [
+				{
+					"name": "Get Subscription Plans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/subscriptions/plans",
+							"host": ["{{base_url}}"],
+							"path": ["api", "subscriptions", "plans"]
+						}
+					}
+				},
+				{
+					"name": "Subscribe to Plan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planId\": \"PLAN_ID\",\n    \"paymentMethodId\": \"pm_card_visa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/subscriptions/subscribe",
+							"host": ["{{base_url}}"],
+							"path": ["api", "subscriptions", "subscribe"]
+						}
+					}
+				},
+				{
+					"name": "Check Subscription Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/subscriptions/status",
+							"host": ["{{base_url}}"],
+							"path": ["api", "subscriptions", "status"]
+						}
+					}
+				},
+				{
+					"name": "Create Payment Intent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 2000,\n    \"currency\": \"eur\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/payments/stripe/create-intent",
+							"host": ["{{base_url}}"],
+							"path": ["api", "payments", "stripe", "create-intent"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "📍 Location APIs",
+			"item": [
+				{
+					"name": "Save New Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Kuća\",\n    \"address\": \"Ilica 1, Zagreb\",\n    \"latitude\": 45.8150,\n    \"longitude\": 15.9819\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/locations/save",
+							"host": ["{{base_url}}"],
+							"path": ["api", "locations", "save"]
+						}
+					}
+				},
+				{
+					"name": "Get Saved Locations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/locations/saved",
+							"host": ["{{base_url}}"],
+							"path": ["api", "locations", "saved"]
+						}
+					}
+				},
+				{
+					"name": "Delete Saved Location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/locations/LOCATION_ID",
+							"host": ["{{base_url}}"],
+							"path": ["api", "locations", "LOCATION_ID"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🔔 Notification APIs",
+			"item": [
+				{
+					"name": "Get Notifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/notifications",
+							"host": ["{{base_url}}"],
+							"path": ["api", "notifications"]
+						}
+					}
+				},
+				{
+					"name": "Update Notification Settings",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dealNotifications\": true,\n    \"promotionalEmails\": false,\n    \"smsNotifications\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/notifications/settings",
+							"host": ["{{base_url}}"],
+							"path": ["api", "notifications", "settings"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "👨‍💼 Admin APIs",
+			"item": [
+				{
+					"name": "Get All Partners (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/admin/partners",
+							"host": ["{{base_url}}"],
+							"path": ["api", "admin", "partners"]
+						}
+					}
+				},
+				{
+					"name": "Approve Partner (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/admin/partners/PARTNER_ID/approve",
+							"host": ["{{base_url}}"],
+							"path": ["api", "admin", "partners", "PARTNER_ID", "approve"]
+						}
+					}
+				},
+				{
+					"name": "Reject Partner (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/admin/partners/PARTNER_ID/reject",
+							"host": ["{{base_url}}"],
+							"path": ["api", "admin", "partners", "PARTNER_ID", "reject"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token",
+			"value": "",
+			"type": "string",
+			"description": "JWT token received after login"
+		}
+	]
+}
