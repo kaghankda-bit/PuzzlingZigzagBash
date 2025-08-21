@@ -1131,7 +1131,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "http://localhost:5000",
+			"value": "https://your-app-name.replit.app",
 			"type": "string"
 		},
 		{
