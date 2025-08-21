@@ -8,9 +8,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL || "postgresql://avnadm
         dialectOptions: {
             ssl: {
                 require: true,
-                rejectUnauthorized: false,
-                ca: false,
-                checkServerIdentity: false
+                rejectUnauthorized: false
             }
         },
         pool: {
