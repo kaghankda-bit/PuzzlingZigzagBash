@@ -1,3 +1,6 @@
+// Disable SSL verification for development (Replit environment)
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 const express = require('express');
 const { connectDB } = require('./config/db');
 const sequelize = require('./config/sequelize');
