@@ -8,10 +8,12 @@ const connectDB = async () => {
         // Create a connection pool for PostgreSQL
         pool = new Pool({
             connectionString: process.env.DATABASE_URL,
-            ssl: {
+            ssl: process.env.DISABLE_SSL === 'true' ? false : (process.env.NODE_ENV === 'production' ? {
                 require: true,
-                rejectUnauthorized: false
-            },
+                rejectUnauthorized: false,
+                ca: false,
+                checkServerIdentity: false
+            } : false),
             max: 10, // Maximum number of clients in the pool
             idleTimeoutMillis: 30000,
             connectionTimeoutMillis: 2000,
